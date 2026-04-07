@@ -1,0 +1,124 @@
+:root {
+  --bg-dark: #111111;
+  --text-neon: #81A6C6;
+  --bg-forbes: #FFFFFF;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, "Times New Roman", serif;
+  font-family: var(--font-sans);
+  background-color: var(--bg-dark);
+  color: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Neon Glow Effect */
+.neon-text {
+  color: var(--text-neon);
+  text-shadow: 0 0 5px rgba(129, 166, 198, 0.4), 
+               0 0 10px rgba(129, 166, 198, 0.3),
+               0 0 20px rgba(129, 166, 198, 0.2);
+}
+
+/* Global Reset for buttons */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+  outline: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grid layout for main game area */
+.game-layout {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .game-layout {
+    flex-direction: row;
+  }
+}
+
+.game-main {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 50vh;
+  border-right: 1px solid #333;
+}
+
+.game-sidebar {
+  flex: 1;
+  background: #1a1a1a;
+  padding: 1rem;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111; 
+}
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+/* Slot Machine wrapper */
+.slot-machine {
+  display: inline-flex;
+  overflow: hidden;
+  height: 1.2em;
+  position: relative;
+  line-height: 1.2;
+}
+
+.slot-digit {
+  display: inline-block;
+  min-width: 0.6em;
+  text-align: center;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
